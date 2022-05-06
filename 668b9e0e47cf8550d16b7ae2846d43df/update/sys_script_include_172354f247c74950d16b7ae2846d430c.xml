@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_cls_i18n_scan.isConcatenated</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Determines if a string within a script is potentially concatenated</description>
+        <name>isConcatenated</name>
+        <script><![CDATA[var isConcatenated = function(script, stringStart, stringEnd) {
+	var stringContext = script.substring(stringStart-3, stringEnd + 3);
+	
+	return stringContext.indexOf('+') != -1;
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+        <sys_created_on>2022-04-27 13:23:35</sys_created_on>
+        <sys_id>172354f247c74950d16b7ae2846d430c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>isConcatenated</sys_name>
+        <sys_package display_value="Clear Skye I18N Scanner Utility" source="x_cls_i18n_scan">668b9e0e47cf8550d16b7ae2846d43df</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Clear Skye I18N Scanner Utility">668b9e0e47cf8550d16b7ae2846d43df</sys_scope>
+        <sys_update_name>sys_script_include_172354f247c74950d16b7ae2846d430c</sys_update_name>
+        <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
+        <sys_updated_on>2022-04-27 13:23:35</sys_updated_on>
+    </sys_script_include>
+</record_update>

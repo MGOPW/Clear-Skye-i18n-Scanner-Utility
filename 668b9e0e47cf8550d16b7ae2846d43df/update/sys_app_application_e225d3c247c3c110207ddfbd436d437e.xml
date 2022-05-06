@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name>I18N Scanner</name>
+        <order>100</order>
+        <roles>admin</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+        <sys_created_on>2022-04-25 19:30:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e225d3c247c3c110207ddfbd436d437e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Clear Skye I18N Scanner Utility</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Clear Skye I18N Scanner Utility" source="x_cls_i18n_scan">668b9e0e47cf8550d16b7ae2846d43df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Clear Skye I18N Scanner Utility">668b9e0e47cf8550d16b7ae2846d43df</sys_scope>
+        <sys_update_name>sys_app_application_e225d3c247c3c110207ddfbd436d437e</sys_update_name>
+        <sys_updated_by>MariaGabriela.Waechter@ClearSkye.com</sys_updated_by>
+        <sys_updated_on>2022-05-06 22:19:15</sys_updated_on>
+        <title>Clear Skye I18N Scanner Utility</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

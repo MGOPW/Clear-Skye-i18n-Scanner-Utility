@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>execute</operation>
+        <source_scope display_value="Clear Skye I18N Scanner Utility">668b9e0e47cf8550d16b7ae2846d43df</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+        <sys_created_on>2022-04-25 19:50:24</sys_created_on>
+        <sys_id>54b9130a47c3c110207ddfbd436d4307</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GlideRecord.deleteMultiple</sys_name>
+        <sys_package display_value="Clear Skye I18N Scanner Utility" source="x_cls_i18n_scan">668b9e0e47cf8550d16b7ae2846d43df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Clear Skye I18N Scanner Utility">668b9e0e47cf8550d16b7ae2846d43df</sys_scope>
+        <sys_update_name>sys_scope_privilege_54b9130a47c3c110207ddfbd436d4307</sys_update_name>
+        <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
+        <sys_updated_on>2022-04-25 19:50:24</sys_updated_on>
+        <target_name>GlideRecord.deleteMultiple</target_name>
+        <target_scope display_value="Global">global</target_scope>
+        <target_type>scriptable</target_type>
+    </sys_scope_privilege>
+</record_update>

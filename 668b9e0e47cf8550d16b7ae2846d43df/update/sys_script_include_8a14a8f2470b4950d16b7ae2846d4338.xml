@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_cls_i18n_scan.ScanProcess</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Contains the primary functions that control the process of running a Scan</description>
+        <name>ScanProcess</name>
+        <script><![CDATA[var ScanProcess = (function() {
+	function log(type, context, message) {
+		var entry = new GlideRecord('x_cls_i18n_scan_scan_log');
+		entry.initialize();
+		
+		if (context) {
+			entry.table = context.gr.getTableName();
+			entry.scanned_record = context.gr.sys_id.toString();
+			entry.scanned_field = context.config.scriptField;
+			entry.scan = context.config.scanId;
+			entry.message = message;
+			entry.type = type;
+			entry.insert();
+		}
+	}
+	
+	function logDebug(context, message) {
+		log('Debug', context, message);
+	}
+	
+	function logWarn(context, message) {
+		log('Warn', context, message);
+	}
+	
+	function logError(context, message) {
+		log('Error', context, message);
+	}
+	
+	function setScanState(scanId, state, message) {
+		var gr = new GlideRecord('x_cls_i18n_scan_scan');
+		if (gr.get('sys_id', scanId)) {
+			gr.state = state;
+
+			if (state == 'Error' || state == 'Completed') {
+				gr.end = new GlideDateTime();
+			}
+			else if (state == 'Pending') {
+				gr.start = new GlideDateTime();
+			}
+			
+			if (message) {
+				gr.result = message;
+			}
+
+			gr.update();
+		}
+		else {
+			throw new Error('Unable to set state of Scan record, record not found');
+		}
+	}
+	
+	function setTableScanStates(scanId, state) {
+		var gr = new GlideRecord('x_cls_i18n_scan_scanned_table');
+		gr.addQuery('scan', scanId);
+		gr.query();
+		gr.state = state;
+		gr.updateMultiple();
+	}
+	
+	function setTableScanState(tableScanId, state, message) {
+		var gr = new GlideRecord('x_cls_i18n_scan_scanned_table');
+		
+		if (gr.get(tableScanId)) {
+			gr.state = state;
+			
+			if (message) {
+				gr.result = message;
+			}
+			
+			gr.update();
+		}
+		else {
+			throw new Error('Unable to set the state of table scan record, record not found');
+		}
+	}
+	
+	function scanTable(config) {
+		var errors = false;
+		
+		setTableScanState(config.id, 'Running');
+		
+		assertMandatory(config.table, 'config.table');
+		assertMandatory(config.query, 'config.query');
+		assertMandatory(config.callback, 'config.callback');
+		assertMandatory(config.scriptField, 'config.scriptField');
+		
+		var gr = new GlideRecord(config.table);
+		gr.addEncodedQuery(config.query);
+		gr.query();
+
+		while (gr.next()) {
+			try {
+				var ast = acorn.loose.parse(gr[config.scriptField].toString(), {
+					'ecmaVersion': 2020,
+					'locations': true
+				});
+				config.callback(ast, gr, config);
+			}
+			catch(err) {
+				errors = true;
+				var context = {
+					'gr': gr,
+					'config': config
+				};
+				logError(context, JSON.stringify(err));
+			}
+		}
+		
+		if (errors) {
+			setTableScanState(config.id, 'Error', 'See Scan Logs for details');
+		}
+		else {
+			setTableScanState(config.id, 'Completed', 'Success');
+		}
+	}
+	
+	function runScan(scanId) {
+		try {
+			gs.include('Acorn');
+			gs.include('Acorn-Loose');
+
+			setScanState(scanId, 'Pending');
+			setTableScanStates(scanId, 'Pending');
+
+			var tableScans = getScanTableConfigs(scanId);
+			tableScans.forEach(scanTable);
+
+			setScanState(scanId, 'Completed');
+		}
+		catch(err) {
+			setScanState(scanId, 'Error', JSON.stringify(err));
+		}
+	}
+	
+	function copyScan(scanId) {
+		var newScanId;
+		var scan = new GlideRecord('x_cls_i18n_scan_scan');
+		if (scan.get(scanId)) {
+			var newScan = new GlideRecord('x_cls_i18n_scan_scan');
+			newScan.initialize();
+			newScan.name = scan.name;
+			newScanId = newScan.insert();
+		}
+		
+		var tableScans = new GlideRecord('x_cls_i18n_scan_scanned_table');
+		tableScans.addQuery('scan', scanId);
+		tableScans.query();
+		
+		while (tableScans.next()) {
+			var newTableScan = new GlideRecord('x_cls_i18n_scan_scanned_table');
+			newTableScan.initialize();
+			newTableScan.table = tableScans.table.toString();
+			newTableScan.script_field = tableScans.script_field.toString();
+			newTableScan.order = tableScans.order * 1;
+			newTableScan.query = tableScans.getValue('query');
+			newTableScan.scan = newScanId;
+			newTableScan.insert();
+		}
+	}
+	
+	function resetScan(scanId) {
+		var scan = new GlideRecord('x_cls_i18n_scan_scan');
+		if (scan.get(scanId)) {
+			scan.result = '';
+			scan.state = 'Not Started';
+			scan.start = '';
+			scan.end = '';
+			scan.update();
+		}
+		
+		var tableScans = new GlideRecord('x_cls_i18n_scan_scanned_table');
+		tableScans.addQuery('scan', scanId);
+		tableScans.query();
+		
+		while (tableScans.next()) {
+			tableScans.result = '';
+			tableScans.state = 'Not Started';
+			tableScans.update();
+		}
+		
+		var scannedNodes = new GlideRecord('x_cls_i18n_scan_scanned_node');
+		scannedNodes.addQuery('scan', scanId);
+		scannedNodes.deleteMultiple();
+		
+		var scanLogs = new GlideRecord('x_cls_i18n_scan_scan_log');
+		scanLogs.addQuery('scan', scanId);
+		scanLogs.deleteMultiple();
+	}
+	
+	return {
+		'run': runScan,
+		'copy': copyScan,
+		'reset': resetScan
+	};
+})();]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+        <sys_created_on>2022-04-27 14:42:49</sys_created_on>
+        <sys_id>8a14a8f2470b4950d16b7ae2846d4338</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>ScanProcess</sys_name>
+        <sys_package display_value="Clear Skye I18N Scanner Utility" source="x_cls_i18n_scan">668b9e0e47cf8550d16b7ae2846d43df</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Clear Skye I18N Scanner Utility">668b9e0e47cf8550d16b7ae2846d43df</sys_scope>
+        <sys_update_name>sys_script_include_8a14a8f2470b4950d16b7ae2846d4338</sys_update_name>
+        <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
+        <sys_updated_on>2022-04-27 16:43:39</sys_updated_on>
+    </sys_script_include>
+</record_update>

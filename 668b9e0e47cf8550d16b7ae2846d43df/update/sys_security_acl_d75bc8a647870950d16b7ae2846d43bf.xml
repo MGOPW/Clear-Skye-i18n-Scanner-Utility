@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description>Default access control on x_cls_i18n_scan_scan</description>
+        <name>x_cls_i18n_scan_scan</name>
+        <operation display_value="read">read</operation>
+        <script/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+        <sys_created_on>2022-04-26 18:05:53</sys_created_on>
+        <sys_id>d75bc8a647870950d16b7ae2846d43bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_cls_i18n_scan_scan</sys_name>
+        <sys_package display_value="Clear Skye I18N Scanner Utility" source="x_cls_i18n_scan">668b9e0e47cf8550d16b7ae2846d43df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Clear Skye I18N Scanner Utility">668b9e0e47cf8550d16b7ae2846d43df</sys_scope>
+        <sys_update_name>sys_security_acl_d75bc8a647870950d16b7ae2846d43bf</sys_update_name>
+        <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
+        <sys_updated_on>2022-04-26 18:05:53</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="notes" label="Notes" language="en" table="x_cls_i18n_scan_scanned_node">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>notes</element>
+            <help/>
+            <hint/>
+            <label>Notes</label>
+            <language>en</language>
+            <name>x_cls_i18n_scan_scanned_node</name>
+            <plural>Notes</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+            <sys_created_on>2022-04-25 19:53:58</sys_created_on>
+            <sys_id>bc8a17ca47c3c110207ddfbd436d432c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Notes</sys_name>
+            <sys_package display_value="Clear Skye I18N Scanner Utility" source="x_cls_i18n_scan">668b9e0e47cf8550d16b7ae2846d43df</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Clear Skye I18N Scanner Utility">668b9e0e47cf8550d16b7ae2846d43df</sys_scope>
+            <sys_update_name>sys_documentation_x_cls_i18n_scan_scanned_node_notes_en</sys_update_name>
+            <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
+            <sys_updated_on>2022-04-25 19:53:58</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

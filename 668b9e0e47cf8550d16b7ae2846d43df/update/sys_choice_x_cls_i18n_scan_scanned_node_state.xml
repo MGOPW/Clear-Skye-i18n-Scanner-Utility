@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="state" table="x_cls_i18n_scan_scanned_node" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <name>x_cls_i18n_scan_scanned_node</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+            <sys_created_on>2022-04-25 19:41:51</sys_created_on>
+            <sys_id>d3b71f4647c3c110207ddfbd436d439f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>state</sys_name>
+            <sys_package display_value="Clear Skye I18N Scanner Utility" source="x_cls_i18n_scan">668b9e0e47cf8550d16b7ae2846d43df</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Clear Skye I18N Scanner Utility">668b9e0e47cf8550d16b7ae2846d43df</sys_scope>
+            <sys_update_name>sys_choice_x_cls_i18n_scan_scanned_node_state</sys_update_name>
+            <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
+            <sys_updated_on>2022-04-25 19:41:51</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Review Needed</label>
+            <language>en</language>
+            <name>x_cls_i18n_scan_scanned_node</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+            <sys_created_on>2022-04-25 19:41:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1bb71f4647c3c110207ddfbd436d439e</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
+            <sys_updated_on>2022-04-26 19:00:53</sys_updated_on>
+            <value>Review Needed</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Flagged</label>
+            <language>en</language>
+            <name>x_cls_i18n_scan_scanned_node</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+            <sys_created_on>2022-04-25 19:41:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d3b7db8647c3c110207ddfbd436d437e</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
+            <sys_updated_on>2022-04-26 17:58:01</sys_updated_on>
+            <value>Flagged</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Ignored</label>
+            <language>en</language>
+            <name>x_cls_i18n_scan_scanned_node</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+            <sys_created_on>2022-04-25 19:41:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>97b7db8647c3c110207ddfbd436d437f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
+            <sys_updated_on>2022-04-25 19:41:51</sys_updated_on>
+            <value>Ignored</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Translated</label>
+            <language>en</language>
+            <name>x_cls_i18n_scan_scanned_node</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>travis.toulson@clearskye.com</sys_created_by>
+            <sys_created_on>2022-04-25 19:41:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5bb7db8647c3c110207ddfbd436d4380</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
+            <sys_updated_on>2022-04-26 17:58:59</sys_updated_on>
+            <value>Translated</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>
