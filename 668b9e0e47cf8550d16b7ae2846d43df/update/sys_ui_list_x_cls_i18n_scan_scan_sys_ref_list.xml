@@ -3,7 +3,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>name</element>
-            <list_id display_value="x_cls_i18n_scan_scan" element="NULL" name="x_cls_i18n_scan_scan" parent="NULL" relationship="NULL" sys_domain="global" view="4e7393511b020110b76d1f4ead4bcbc6">503024f947d7c550207ddfbd436d43dd</list_id>
+            <list_id display_value="x_cls_i18n_scan_scan" element="NULL" name="x_cls_i18n_scan_scan" parent="NULL" relationship="NULL" sys_domain="global" view="70507340c923101091f9f0646483272e">503024f947d7c550207ddfbd436d43dd</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
@@ -40,7 +40,7 @@
             <sys_updated_by>travis.toulson@clearskye.com</sys_updated_by>
             <sys_updated_on>2022-05-06 21:57:09</sys_updated_on>
             <sys_user/>
-            <view display_value="Reference List" name="sys_ref_list">4e7393511b020110b76d1f4ead4bcbc6</view>
+            <view display_value="Reference List" name="sys_ref_list">70507340c923101091f9f0646483272e</view>
             <view_name/>
         </sys_ui_list>
     </sys_ui_list>

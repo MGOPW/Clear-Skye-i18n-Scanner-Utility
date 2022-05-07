@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Scan Log" max_length="40" name="x_cls_i18n_scan_scan_log" type="collection">
+        <element label="Message" max_length="65000" name="message" read_only="true" type="string_full_utf8"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Scan" max_length="32" name="scan" read_only="true" reference="x_cls_i18n_scan_scan" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" dependent="table" dependent_on_field="table" label="Scanned field" max_length="80" name="scanned_field" read_only="true" type="field_name" use_dependent_field="true"/>
+        <element attributes="edge_encryption_enabled=true" dependent="table" dependent_on_field="table" label="Scanned record" max_length="32" name="scanned_record" type="document_id" use_dependent_field="true"/>
+        <element attributes="base_start=true,edge_encryption_enabled=true" label="Table" max_length="80" name="table" type="table_name"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Type" max_length="40" name="type" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Debug" sequence="0" value="Debug"/>
+                <element inactive_on_update="false" label="Warn" sequence="1" value="Warn"/>
+                <element inactive_on_update="false" label="Error" sequence="2" value="Error"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="scan"/>
+        </index>
+        <index name="index2">
+            <element name="scanned_record"/>
+        </index>
+    </element>
+</database>

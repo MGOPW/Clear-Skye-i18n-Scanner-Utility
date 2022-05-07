@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Scan" max_length="40" name="x_cls_i18n_scan_scan" type="collection">
+        <element label="End" max_length="40" name="end" read_only="true" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Name" max_length="255" name="name" type="string_full_utf8"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Result" max_length="65000" name="result" type="string_full_utf8"/>
+        <element label="Start" max_length="40" name="start" read_only="true" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="Not Started" label="State" max_length="40" name="state" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Not Started" sequence="0" value="Not Started"/>
+                <element inactive_on_update="false" label="Pending" sequence="1" value="Pending"/>
+                <element inactive_on_update="false" label="Error" sequence="2" value="Error"/>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="Completed"/>
+            </choice>
+        </element>
+    </element>
+</database>

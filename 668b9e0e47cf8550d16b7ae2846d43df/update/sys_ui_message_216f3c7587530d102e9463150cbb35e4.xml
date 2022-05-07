@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application/>
+        <code/>
+        <commented_message/>
+        <key>Flow Designer</key>
+        <language>en</language>
+        <message>Flow Designer</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>MGOPW</sys_created_by>
+        <sys_created_on>2022-05-07 00:13:29</sys_created_on>
+        <sys_id>216f3c7587530d102e9463150cbb35e4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Flow Designer</sys_name>
+        <sys_package display_value="Clear Skye I18N Scanner Utility" source="x_cls_i18n_scan">668b9e0e47cf8550d16b7ae2846d43df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Clear Skye I18N Scanner Utility">668b9e0e47cf8550d16b7ae2846d43df</sys_scope>
+        <sys_update_name>sys_ui_message_216f3c7587530d102e9463150cbb35e4</sys_update_name>
+        <sys_updated_by>MGOPW</sys_updated_by>
+        <sys_updated_on>2022-05-07 00:13:29</sys_updated_on>
+    </sys_ui_message>
+</record_update>
