@@ -1,4 +1,4 @@
-# Clear-Skye-i18n-Scanner-Utility
+# Clear Skye i18n Scanner Utility
 
 **Enhancement requests and issues at [Github](https://github.com/MGOPW/Clear-Skye-i18n-Scanner-Utility).**   
 _Please check the Github for the latest updates. We will be only updating the store app for major releases._
