@@ -11,6 +11,8 @@ This helps your localization process by saving you all the hassle of manually go
 
 #### Credits: Travis Toulson at [Code Creative](https://codecreative.io/), [Acorn.JS](https://github.com/acornjs/acorn)
 
+For more handy information you'll need to localize your app, check out our [WomenNow/SNAppLocalization](https://github.com/WomenNowDev/SNAppLocalization) repository for all the details.
+
 * * *
 
 Quick start:
